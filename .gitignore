@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.log
+.claude/
+/Sanuji_Weerasinghe_CV_final1.pdf
+/WhatsApp Image*.jpeg
