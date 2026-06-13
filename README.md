@@ -116,10 +116,3 @@ If `SMTP_*` variables are left blank, contact messages are still saved to MongoD
 3. Add the environment variables from `server/.env.example` (`MONGO_URI`, `CLIENT_URL`, etc.).
 4. Set `CLIENT_URL` to your deployed Vercel URL so CORS allows requests from the live site.
 
-## Future improvements
-
-- Add `client/public/resume.pdf` (export from `Sanuji_Weerasinghe_CV_no_photo (1).docx`) — see `client/public/RESUME_PLACEHOLDER.md`.
-- Replace GitHub stats placeholder images with a custom GitHub API integration for richer data.
-- Add project screenshots/cover images once available.
-- Add a blog or case-study pages for the solar PV research project as it progresses.
-- Add automated tests (Vitest for client, Jest/Supertest for server).
