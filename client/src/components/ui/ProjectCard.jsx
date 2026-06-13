@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiGithub, FiExternalLink, FiClock } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiClock, FiFolder } from "react-icons/fi";
 import { fadeUp } from "../../hooks/useScrollReveal";
 import Badge from "./Badge";
 
@@ -7,11 +7,20 @@ export default function ProjectCard({ project }) {
   return (
     <motion.article variants={fadeUp} className="card flex h-full flex-col gap-4 p-6">
       <div className="flex items-start justify-between gap-3">
-        <div>
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{project.title}</h3>
-          <p className="text-sm text-accent-600 dark:text-accent-400">{project.subtitle}</p>
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-50 text-accent-600 dark:bg-accent-500/10 dark:text-accent-400">
+          <FiFolder className="h-5 w-5" />
+        </span>
+        <div className="flex flex-col items-end gap-1.5">
+          <span className="text-xs font-medium text-slate-400 dark:text-slate-500">{project.year}</span>
+          <Badge className="border-accent-200 bg-accent-50 text-accent-600 dark:border-accent-900/60 dark:bg-accent-500/10 dark:text-accent-400">
+            {project.category}
+          </Badge>
         </div>
-        <span className="shrink-0 text-xs font-medium text-slate-400 dark:text-slate-500">{project.year}</span>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{project.title}</h3>
+        <p className="text-sm text-accent-600 dark:text-accent-400">{project.subtitle}</p>
       </div>
 
       <p className="text-sm text-slate-500 dark:text-slate-400">{project.description}</p>
@@ -33,7 +42,7 @@ export default function ProjectCard({ project }) {
         ))}
       </div>
 
-      <div className="flex items-center gap-3 pt-2">
+      <div className="flex items-center gap-3 border-t border-slate-200 pt-4 dark:border-slate-800">
         {project.github && (
           <a
             href={project.github}

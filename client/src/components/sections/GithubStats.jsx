@@ -50,7 +50,7 @@ export default function GithubStats() {
                 loading="lazy"
                 className="w-full"
                 alt={`${personal.githubUsername} GitHub stats`}
-                src={`https://github-readme-stats.vercel.app/api?username=${personal.githubUsername}&show_icons=true&hide_title=false&include_all_commits=true&count_private=true&theme=${statsTheme}&bg_color=00000000&border_radius=16&hide_border=true`}
+                src={`https://github-readme-stats-eight-theta.vercel.app/api?username=${personal.githubUsername}&show_icons=true&hide_title=false&include_all_commits=true&count_private=true&theme=${statsTheme}&bg_color=00000000&border_radius=16&hide_border=true`}
               />
             </div>
             <div className="card overflow-hidden p-4">
@@ -58,7 +58,7 @@ export default function GithubStats() {
                 loading="lazy"
                 className="w-full"
                 alt={`${personal.githubUsername} most used languages`}
-                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${personal.githubUsername}&layout=compact&theme=${statsTheme}&bg_color=00000000&border_radius=16&hide_border=true`}
+                src={`https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=${personal.githubUsername}&layout=compact&theme=${statsTheme}&bg_color=00000000&border_radius=16&hide_border=true`}
               />
             </div>
           </motion.div>
