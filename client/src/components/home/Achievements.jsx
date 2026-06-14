@@ -9,14 +9,16 @@ const Achievements = () => {
       subtitle: "New Innovation Competition",
       project: "Hope Project",
       year: "2024",
-      icon: <Trophy className="text-yellow-500" size={32} />
+      icon: <Trophy className="text-yellow-500" size={32} />,
+      image: "https://images.unsplash.com/photo-1567427017947-545c5f89c6ad?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Champion — KickStart Weekend 2024",
       subtitle: "SIRED Business Idea Competition",
       project: "Business Idea Pitch",
       year: "2024",
-      icon: <Star className="text-primary-500" size={32} />
+      icon: <Star className="text-primary-500" size={32} />,
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8bee?auto=format&fit=crop&q=80&w=800"
     }
   ];
 
@@ -56,19 +58,24 @@ const Achievements = () => {
           {achievements.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass p-10 rounded-[3rem] border border-slate-200 dark:border-slate-800 flex items-start gap-8 group hover:border-primary-500/30 transition-all duration-500"
+              className="group relative overflow-hidden glass rounded-[3rem] border border-slate-200 dark:border-slate-800 hover:border-primary-500/30 transition-all duration-500"
             >
-              <div className="p-5 bg-white dark:bg-slate-800 rounded-3xl shadow-xl group-hover:scale-110 transition-transform duration-500">
-                {item.icon}
-              </div>
-              <div className="flex-grow">
-                <div className="flex justify-between items-start mb-2">
-                  <span className="text-xs font-bold text-primary-500 uppercase tracking-widest">{item.year}</span>
+              <div className="h-48 overflow-hidden relative">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-6 left-8 flex items-center gap-3">
+                  <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white">
+                    {item.icon}
+                  </div>
+                  <span className="text-white font-bold tracking-widest text-xs uppercase">{item.year}</span>
                 </div>
+              </div>
+              
+              <div className="p-8">
                 <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 leading-tight">
                   {item.title}
                 </h4>

@@ -103,15 +103,17 @@ const Research = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-6 rounded-[2rem] bg-white/5 border border-white/5 text-center">
-                    <Map size={24} className="mx-auto mb-3 text-blue-400" />
-                    <p className="text-xs font-bold text-slate-500 uppercase">5 Districts</p>
-                    <p className="text-lg font-bold">Mapping</p>
+                  <div className="p-6 rounded-[2rem] bg-white/5 border border-white/5 text-center relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=400" className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" alt="Mapping" />
+                    <Map size={24} className="mx-auto mb-3 text-blue-400 relative z-10" />
+                    <p className="text-xs font-bold text-slate-500 uppercase relative z-10">5 Districts</p>
+                    <p className="text-lg font-bold relative z-10">Mapping</p>
                   </div>
-                  <div className="p-6 rounded-[2rem] bg-white/5 border border-white/5 text-center">
-                    <BarChart3 size={24} className="mx-auto mb-3 text-green-400" />
-                    <p className="text-xs font-bold text-slate-500 uppercase">8 Years</p>
-                    <p className="text-lg font-bold">Data History</p>
+                  <div className="p-6 rounded-[2rem] bg-white/5 border border-white/5 text-center relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" alt="Data history" />
+                    <BarChart3 size={24} className="mx-auto mb-3 text-green-400 relative z-10" />
+                    <p className="text-xs font-bold text-slate-500 uppercase relative z-10">8 Years</p>
+                    <p className="text-lg font-bold relative z-10">Data History</p>
                   </div>
                 </div>
               </div>
