@@ -52,13 +52,13 @@ const Projects = () => {
       description: "Applied transfer learning with VGG16 and ResNet50 to classify tea leaf diseases with data augmentation and model comparison."
     },
     {
-      title: "Hybrid RAG Chatbot",
-      subtitle: "Local Embeddings + Google Gemini",
+      title: "Local RAG Support Bot",
+      subtitle: "Enterprise-Grade Local AI Assistant",
       category: "AI/ML",
       year: "2025",
-      tags: ["HuggingFace", "Google Gemini", "RAG", "Python"],
-      image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&q=80&w=800",
-      description: "Combining local HuggingFace embeddings with Google Gemini for a high-performance RAG chatbot designed to avoid API rate limits."
+      tags: ["Llama 3.2", "LangChain", "FastAPI", "ChromaDB", "TTS"],
+      image: "https://images.unsplash.com/photo-1531746790731-6c087fdec0ed?auto=format&fit=crop&q=80&w=800",
+      description: "Fully local RAG customer support chatbot utilizing Llama 3.2, FastAPI (SSE streaming), and Streamlit. Features cited sources, conversation memory, and integrated male/female text-to-speech."
     },
     {
       title: "Health Mention Classification",
