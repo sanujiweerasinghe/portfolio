@@ -9,8 +9,8 @@ const Experience = () => {
       company: "Data Science Society",
       location: "University of Peradeniya",
       period: "2024 — Present",
-      description: "Leading research initiatives and coordinating technical workshops for the student body. Mentoring juniors in machine learning workflows and data engineering best practices.",
-      tags: ["Leadership", "Mentoring", "R&D Strategy"]
+      description: "Appointed as the Director of Research & Development, overseeing the society's technical direction and research-oriented activities.",
+      tags: ["Leadership", "Research & Development"]
     },
     {
       role: "Job Skills Development Trainee",

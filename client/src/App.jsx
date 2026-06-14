@@ -7,6 +7,8 @@ import Skills from './components/home/Skills';
 import Experience from './components/home/Experience';
 import Projects from './components/home/Projects';
 import Research from './components/home/Research';
+import Achievements from './components/home/Achievements';
+import GithubStats from './components/home/GithubStats';
 import Contact from './components/home/Contact';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
@@ -35,6 +37,8 @@ function App() {
         <Projects />
         <Research />
         <Experience />
+        <Achievements />
+        <GithubStats />
         <Contact />
       </main>
 
