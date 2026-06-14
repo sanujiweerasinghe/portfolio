@@ -57,7 +57,7 @@ const Projects = () => {
       category: "AI/ML",
       year: "2025",
       tags: ["Llama 3.2", "LangChain", "FastAPI", "ChromaDB", "TTS"],
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fdec0ed?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
       description: "Fully local RAG customer support chatbot utilizing Llama 3.2, FastAPI (SSE streaming), and Streamlit. Features cited sources, conversation memory, and integrated male/female text-to-speech."
     },
     {
