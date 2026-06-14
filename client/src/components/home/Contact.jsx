@@ -51,7 +51,7 @@ const Contact = () => {
             </h2>
             <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-10">
               Let's <br />
-              <span className="text-gradient">work together</span>.
+              <span className="text-gradient pr-2">work together</span>.
             </h3>
             <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed font-medium">
               Have an internship opportunity, a project idea, or just want to say hi? My inbox is open.
