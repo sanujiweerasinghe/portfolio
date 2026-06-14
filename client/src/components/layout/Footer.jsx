@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} Sanuji Weerasinghe. All rights reserved.</p>
+          <p>© 2025 Sanuji Weerasinghe. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary-500">Privacy Policy</a>
             <a href="#" className="hover:text-primary-500">Terms of Service</a>

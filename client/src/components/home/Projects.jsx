@@ -19,7 +19,7 @@ const Projects = () => {
       title: "RAG Smart Document Chatbot",
       subtitle: "Retrieval-Augmented Q&A System",
       category: "AI/ML",
-      year: "2026",
+      year: "2025",
       tags: ["ChromaDB", "Ollama", "Streamlit", "Python"],
       image: "https://images.unsplash.com/photo-1531746790731-6c087fdec0ed?auto=format&fit=crop&q=80&w=800",
       description: "An end-to-end RAG application that answers natural-language questions grounded in a custom document corpus with source citations."
@@ -28,7 +28,7 @@ const Projects = () => {
       title: "Customer Churn Prediction",
       subtitle: "Cost-Sensitive Churn Model with MLOps",
       category: "MLOps",
-      year: "2026",
+      year: "2025",
       tags: ["XGBoost", "MLflow", "Docker", "GitHub Actions"],
       image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800",
       description: "A churn-prediction model productionised with a full MLOps pipeline including experiment tracking and CI/CD monitoring."
@@ -55,7 +55,7 @@ const Projects = () => {
       title: "Hybrid RAG Chatbot",
       subtitle: "Local Embeddings + Google Gemini",
       category: "AI/ML",
-      year: "2026",
+      year: "2025",
       tags: ["HuggingFace", "Google Gemini", "RAG", "Python"],
       image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&q=80&w=800",
       description: "Combining local HuggingFace embeddings with Google Gemini for a high-performance RAG chatbot designed to avoid API rate limits."
