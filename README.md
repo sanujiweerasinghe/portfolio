@@ -73,6 +73,3 @@ server/         # Express backend
 1. Connect the `client` directory to Vercel/Netlify.
 2. Ensure the base directory is set to `client`.
 3. Set the build command to `npm run build` and output directory to `dist`.
-
-## 📄 License
-This project is licensed under the ISC License.
