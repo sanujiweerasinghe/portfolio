@@ -1,86 +1,70 @@
-import { FiGithub, FiLinkedin, FiMail, FiArrowUp } from "react-icons/fi";
-import { personal } from "../../data/profile";
+import React from 'react';
+import Navbar from './Navbar';
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 
-const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-const socials = [
-  { label: "GitHub", href: personal.github, icon: FiGithub },
-  { label: "LinkedIn", href: personal.linkedin, icon: FiLinkedin },
-  { label: "Email", href: `mailto:${personal.email}`, icon: FiMail },
-];
-
-export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800">
-      <div className="section-container flex flex-col gap-8 py-12 sm:flex-row sm:items-start sm:justify-between">
-        <div className="max-w-sm">
-          <a href="#home" className="text-lg font-bold tracking-tight">
-            <span className="text-gradient">{personal.name}</span>
-          </a>
-          <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">{personal.tagline}</p>
-          <div className="mt-4 flex gap-3">
-            {socials.map(({ label, href, icon: Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 transition-all hover:border-accent-500 hover:text-accent-600 dark:hover:text-accent-400"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
+    <footer className="bg-slate-50 dark:bg-slate-900/50 pt-20 pb-10 border-t border-slate-200 dark:border-slate-800">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+          <div className="col-span-1 md:col-span-1">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <span className="text-primary-500">Sanuji</span>
+              <span>Weerasinghe</span>
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 max-w-xs">
+              Data Science undergraduate focused on machine learning and predictive modeling.
+            </p>
           </div>
-        </div>
-
-        <div className="flex gap-12">
-          <div>
-            <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Quick Links</h4>
-            <ul className="mt-3 space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-500 dark:text-slate-400 transition-colors hover:text-accent-600 dark:hover:text-accent-400"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Get in touch</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-500 dark:text-slate-400">
-              <li>{personal.location}</li>
-              <li>
-                <a href={`mailto:${personal.email}`} className="transition-colors hover:text-accent-600 dark:hover:text-accent-400">
-                  {personal.email}
+          
+          <div className="grid grid-cols-2 gap-8 col-span-1 md:col-span-1">
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-slate-600 dark:text-slate-400">
+                <li><a href="#about" className="hover:text-primary-500 transition-colors">About</a></li>
+                <li><a href="#projects" className="hover:text-primary-500 transition-colors">Projects</a></li>
+                <li><a href="#research" className="hover:text-primary-500 transition-colors">Research</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Social</h4>
+              <div className="flex gap-4">
+                <a href="https://github.com/sanujiweerasinghe/" target="_blank" rel="noopener noreferrer" className="p-2 glass rounded-full hover:text-primary-500 transition-colors">
+                  <Github size={20} />
                 </a>
-              </li>
-            </ul>
+                <a href="https://linkedin.com/in/sanuji-weerasinghe-b91b9a24b/" target="_blank" rel="noopener noreferrer" className="p-2 glass rounded-full hover:text-primary-500 transition-colors">
+                  <Linkedin size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-span-1 flex flex-col items-center md:items-end justify-center">
+            <button 
+              onClick={scrollToTop}
+              className="p-4 glass rounded-full hover:bg-primary-500 hover:text-white transition-all transform hover:-translate-y-1 shadow-lg"
+            >
+              <ArrowUp size={24} />
+            </button>
+            <span className="mt-4 text-sm text-slate-500">Back to Top</span>
           </div>
         </div>
-      </div>
 
-      <div className="section-container flex flex-col items-center justify-between gap-3 border-t border-slate-200 dark:border-slate-800 py-6 sm:flex-row">
-        <p className="text-xs text-slate-400 dark:text-slate-500">
-          © {new Date().getFullYear()} {personal.name}. All rights reserved.
-        </p>
-        <a
-          href="#home"
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 transition-colors hover:text-accent-600 dark:hover:text-accent-400"
-        >
-          Back to top <FiArrowUp className="h-3 w-3" />
-        </a>
+        <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+          <p>© 2025 Sanuji Weerasinghe. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-primary-500">Privacy Policy</a>
+            <a href="#" className="hover:text-primary-500">Terms of Service</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

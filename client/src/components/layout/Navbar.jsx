@@ -1,91 +1,120 @@
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
-import ThemeToggle from "./ThemeToggle";
-import { personal } from "../../data/profile";
+import React, { useState, useEffect } from 'react';
+import { useDarkMode } from '../../hooks/useDarkMode';
+import { Sun, Moon, Menu, X, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const links = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Research", href: "#research" },
-  { label: "Experience", href: "#experience" },
-  { label: "Achievements", href: "#achievements" },
-  { label: "GitHub", href: "#github" },
-  { label: "Contact", href: "#contact" },
-];
-
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+const Navbar = () => {
+  const [colorTheme, setTheme] = useDarkMode();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-2" : "py-4"
-      }`}
-    >
-      <nav className="section-container">
-        <div className={`glass flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-300 ${scrolled ? "shadow-lg shadow-slate-200/40 dark:shadow-black/30" : ""}`}>
-          <a href="#home" className="text-lg font-bold tracking-tight">
-            <span className="text-gradient">{personal.name.split(" ")[0]}</span>
-          </a>
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Research', href: '#research' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Awards', href: '#achievements' },
+    { name: 'GitHub', href: '#github' },
+    { name: 'Contact', href: '#contact' },
+  ];
 
-          <div className="hidden items-center gap-1 lg:flex">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="rounded-full px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:bg-accent-50 hover:text-accent-600 dark:hover:bg-accent-500/10 dark:hover:text-accent-400"
-              >
-                {link.label}
-              </a>
-            ))}
+  return (
+    <nav className="fixed w-full z-[100] transition-all duration-500 pt-6 px-6">
+      <div className={`max-w-5xl mx-auto transition-all duration-500 ${isScrolled ? 'glass rounded-[2rem] px-8 py-3' : 'bg-transparent px-4 py-4'}`}>
+        <div className="flex justify-between items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-3"
+          >
+            <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/30">
+              <Sparkles size={20} />
+            </div>
+            <a href="#" className="text-xl font-black tracking-tighter hover:text-primary-500 transition-colors">
+              Sanuji Weerasinghe
+            </a>
+          </motion.div>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-2">
+            <div className="flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/50 p-1 rounded-2xl border border-slate-200/50 dark:border-slate-700/50">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-xs font-bold px-4 py-2 rounded-xl transition-all hover:bg-white dark:hover:bg-slate-700 hover:shadow-sm dark:text-slate-400 dark:hover:text-white uppercase tracking-widest"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+            
+            <div className="h-8 w-[1px] bg-slate-200 dark:bg-slate-800 mx-2"></div>
+
+            <button
+              onClick={() => setTheme(colorTheme)}
+              className="p-3 rounded-xl glass hover:text-primary-500 transition-all hover:scale-110"
+            >
+              {colorTheme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
           </div>
 
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
+          {/* Mobile Toggle */}
+          <div className="md:hidden flex items-center gap-3">
             <button
-              type="button"
-              aria-label="Toggle menu"
-              onClick={() => setOpen((prev) => !prev)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 lg:hidden"
+              onClick={() => setTheme(colorTheme)}
+              className="p-3 rounded-xl glass transition-all"
             >
-              {open ? <FiX /> : <FiMenu />}
+              {colorTheme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-3 rounded-xl glass transition-all"
+            >
+              {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
+      </div>
 
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ opacity: 0, y: -10, height: 0 }}
-              animate={{ opacity: 1, y: 0, height: "auto" }}
-              exit={{ opacity: 0, y: -10, height: 0 }}
-              className="glass mt-2 overflow-hidden rounded-2xl lg:hidden"
-            >
-              <div className="flex flex-col p-3">
-                {links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-xl px-4 py-3 text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:bg-accent-50 hover:text-accent-600 dark:hover:bg-accent-500/10 dark:hover:text-accent-400"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-    </header>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden mt-4 max-w-5xl mx-auto glass rounded-[2.5rem] overflow-hidden p-8 border-primary-500/10"
+          >
+            <div className="flex flex-col gap-6">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-2xl font-bold hover:text-primary-500 transition-colors"
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
-}
+};
+
+export default Navbar;

@@ -1,118 +1,67 @@
-# Sanuji Weerasinghe — Portfolio
+# Premium Data Science Portfolio (MERN Stack)
 
-A modern, responsive, recruiter-focused portfolio website built with the MERN stack (MongoDB, Express, React, Node.js).
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-## Live sections
+A professional, responsive, and recruiter-focused portfolio website for Sanuji Weerasinghe, a Data Science undergraduate. Built with the MERN stack and an Apple-inspired minimalist design.
 
-Hero · About · Skills · Projects (filterable) · Research · Experience · Achievements · GitHub stats · Contact (with MongoDB-backed form)
+## 🚀 Features
+- **Dual Theme Support:** Meticulously designed Light and Dark modes.
+- **Data Science Focus:** Dedicated Research and ML project sections.
+- **Modern Animations:** Smooth transitions and scroll reveal effects using Framer Motion.
+- **Glassmorphism UI:** Elegant, clean aesthetics with soft shadows.
+- **Functional Contact Form:** Stores messages in MongoDB and sends email notifications.
+- **Fully Responsive:** Optimized for all devices from mobile to desktop.
 
-## Tech stack
+## 🛠️ Tech Stack
+- **Frontend:** React, Vite, Tailwind CSS, Framer Motion, Lucide Icons.
+- **Backend:** Node.js, Express.
+- **Database:** MongoDB (Mongoose).
+- **Communication:** Axios, Nodemailer.
 
-**Client**
-- React 19 + Vite
-- Tailwind CSS v4 (dark mode, glassmorphism, custom design tokens)
-- Framer Motion (scroll-reveal animations, typing effect)
-- React Router
-- React Icons, Axios, React Helmet Async (SEO)
-
-**Server**
-- Node.js + Express
-- MongoDB + Mongoose
-- Nodemailer (optional email notifications)
-- express-validator, express-rate-limit, helmet, cors, morgan
-
-## Folder structure
-
-```
-portfolio/
-  client/
-    public/                # static assets (favicon, resume.pdf)
-    src/
-      components/
-        layout/            # Navbar, Footer, ScrollProgress, BackToTop, ThemeToggle, CustomCursor, LoadingScreen
-        sections/           # Hero, About, Skills, Projects, Research, Experience, Achievements, GithubStats, Contact
-        ui/                 # SectionHeading, ProjectCard, SkillCard, TimelineItem, Badge
-      context/ThemeContext.jsx
-      hooks/                # useScrollReveal, useTypingEffect
-      data/profile.js       # all site content (single source of truth)
-      pages/                # Home, NotFound
-  server/
-    src/
-      config/db.js
-      models/Message.js
-      routes/contactRoutes.js
-      controllers/contactController.js
-      middleware/           # errorHandler, rateLimiter
-      index.js
+## 📂 Project Structure
+```text
+client/         # React frontend
+server/         # Express backend
 ```
 
-## Getting started
+## ⚙️ Setup Instructions
 
-### Prerequisites
-- Node.js 20.19+ or 22.12+ (Vite 8 requirement)
-- npm
-- A MongoDB connection string (local MongoDB or MongoDB Atlas)
+### 1. Prerequisites
+- Node.js (v18+)
+- MongoDB Atlas account (or local MongoDB)
+- Gmail account (for Nodemailer)
 
-### 1. Client setup
+### 2. Backend Setup
+1. Navigate to the `server` directory: `cd server`
+2. Install dependencies: `npm install`
+3. Create a `.env` file (refer to `.env.example`) and add your credentials:
+   - `MONGODB_URI`: Your MongoDB connection string.
+   - `EMAIL_USER`: Your Gmail address.
+   - `EMAIL_PASS`: Your Gmail App Password.
+   - `RECEIVER_EMAIL`: Where you want to receive notifications.
+4. Start the server: `npm start`
 
-```bash
-cd client
-npm install
-cp .env.example .env   # set VITE_API_URL if the API runs on a different host/port
-npm run dev
-```
+### 3. Frontend Setup
+1. Navigate to the `client` directory: `cd client`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
 
-The site runs at `http://localhost:5173`.
+## 🌍 Deployment
 
-### 2. Server setup
+### Backend (Render/Railway)
+1. Push your code to GitHub.
+2. Connect your repository to Render/Railway.
+3. Set the environment variables in the platform's dashboard.
 
-```bash
-cd server
-npm install
-cp .env.example .env   # fill in MONGO_URI and other variables
-npm run dev
-```
+### Frontend (Vercel/Netlify)
+1. Connect the `client` directory to Vercel/Netlify.
+2. Ensure the base directory is set to `client`.
+3. Set the build command to `npm run build` and output directory to `dist`.
 
-The API runs at `http://localhost:5000`.
-
-## Environment variables
-
-### `client/.env`
-| Variable | Description |
-| --- | --- |
-| `VITE_API_URL` | Base URL of the backend API (e.g. `http://localhost:5000`) |
-
-### `server/.env`
-| Variable | Description |
-| --- | --- |
-| `PORT` | Port the Express server listens on (default `5000`) |
-| `MONGO_URI` | MongoDB connection string |
-| `CLIENT_URL` | Allowed CORS origin (the deployed client URL) |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | Optional SMTP credentials for Nodemailer notifications |
-| `NOTIFY_EMAIL` | Email address to receive contact-form notifications |
-
-If `SMTP_*` variables are left blank, contact messages are still saved to MongoDB — email notifications are simply skipped.
-
-## MongoDB Atlas setup
-
-1. Create a free cluster at [mongodb.com/atlas](https://www.mongodb.com/atlas).
-2. Under **Database Access**, create a database user with a strong password.
-3. Under **Network Access**, allow access from your deployment platform (or `0.0.0.0/0` for simplicity during development).
-4. Copy the connection string from **Connect → Drivers**, replace `<password>` with your user's password, and set it as `MONGO_URI` in `server/.env`.
-
-## Deployment
-
-### Client → Vercel
-
-1. Push the repo to GitHub.
-2. In Vercel, import the project and set the **Root Directory** to `client`.
-3. Build command: `npm run build` · Output directory: `dist`.
-4. Add environment variable `VITE_API_URL` pointing to your deployed server URL.
-
-### Server → Render
-
-1. In Render, create a new **Web Service** from the repo with **Root Directory** set to `server`.
-2. Build command: `npm install` · Start command: `npm start`.
-3. Add the environment variables from `server/.env.example` (`MONGO_URI`, `CLIENT_URL`, etc.).
-4. Set `CLIENT_URL` to your deployed Vercel URL so CORS allows requests from the live site.
-
+## 📄 License
+This project is licensed under the ISC License.

@@ -1,43 +1,49 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
-import { ThemeProvider } from "./context/ThemeContext";
-import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
-import ScrollProgress from "./components/layout/ScrollProgress";
-import BackToTop from "./components/layout/BackToTop";
-import CustomCursor from "./components/layout/CustomCursor";
-import LoadingScreen from "./components/layout/LoadingScreen";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
+import React from 'react';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import Hero from './components/home/Hero';
+import About from './components/home/About';
+import Skills from './components/home/Skills';
+import Experience from './components/home/Experience';
+import Projects from './components/home/Projects';
+import Research from './components/home/Research';
+import Achievements from './components/home/Achievements';
+import GithubStats from './components/home/GithubStats';
+import Contact from './components/home/Contact';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 900);
-    return () => clearTimeout(timer);
-  }, []);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
-    <HelmetProvider>
-      <ThemeProvider>
-        <BrowserRouter>
-          <LoadingScreen loading={loading} />
-          <CustomCursor />
-          <ScrollProgress />
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-          <BackToTop />
-        </BrowserRouter>
-      </ThemeProvider>
-    </HelmetProvider>
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-500 font-sans selection:bg-primary-500/30 antialiased">
+      {/* Scroll Progress Bar */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-1.5 bg-primary-500 origin-left z-[110] shadow-[0_0_15px_rgba(14,165,233,0.5)]"
+        style={{ scaleX }}
+      />
+
+      <Navbar />
+      
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Research />
+        <Experience />
+        <Achievements />
+        <GithubStats />
+        <Contact />
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
