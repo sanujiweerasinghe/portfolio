@@ -12,7 +12,7 @@ const Projects = () => {
       category: "Full Stack",
       year: "2025",
       tags: ["Django REST", "React", "OpenCV", "Python"],
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800",
       description: "A full-stack web application enabling end-to-end insurance claim submission and AI-powered document analysis for Janashakthi Insurance."
     },
     {
