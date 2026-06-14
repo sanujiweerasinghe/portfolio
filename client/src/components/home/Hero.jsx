@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Github, Linkedin, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Download, Github, Linkedin, Sparkles } from 'lucide-react';
 import profileImg from '../../assets/profile.jpg';
 
 const Hero = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, GitBranch, GitPullRequest, Star } from 'lucide-react';
+import { Github, ExternalLink, GitBranch, GitPullRequest, Star, Code } from 'lucide-react';
 
 const GithubStats = () => {
   const username = "sanujiweerasinghe";
