@@ -115,15 +115,6 @@ const About = () => {
               </div>
             </div>
 
-            <div className="p-8 glass rounded-[2.5rem] border border-slate-200 dark:border-slate-800 flex items-center gap-6 group hover:border-primary-500/50 transition-colors">
-              <div className="w-16 h-16 rounded-2xl bg-primary-500/10 text-primary-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Code size={32} />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Current Focus</p>
-                <p className="text-lg font-bold leading-tight">Advanced Deep Learning & Geospatial AI</p>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
