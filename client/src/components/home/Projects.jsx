@@ -12,7 +12,7 @@ const Projects = () => {
       category: "Full Stack",
       year: "2025",
       tags: ["Django REST", "React", "OpenCV", "Python"],
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
       description: "A full-stack web application enabling end-to-end insurance claim submission and AI-powered document analysis for Janashakthi Insurance."
     },
     {
@@ -21,7 +21,7 @@ const Projects = () => {
       category: "AI/ML",
       year: "2025",
       tags: ["ChromaDB", "Ollama", "Streamlit", "Python"],
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fdec0ed?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
       description: "An end-to-end RAG application that answers natural-language questions grounded in a custom document corpus with source citations."
     },
     {
@@ -48,7 +48,7 @@ const Projects = () => {
       category: "AI/ML",
       year: "2025",
       tags: ["PyTorch", "VGG16", "ResNet50", "scikit-learn"],
-      image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800",
       description: "Applied transfer learning with VGG16 and ResNet50 to classify tea leaf diseases with data augmentation and model comparison."
     },
     {
