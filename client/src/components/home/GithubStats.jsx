@@ -38,68 +38,28 @@ const GithubStats = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-12"
           >
-            <div className="glass p-4 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden flex justify-center">
-              <img 
-                src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=dracula&hide_border=true&bg_color=00000000&title_color=0ea5e9&icon_color=0ea5e9&text_color=94a3b8`} 
-                alt="GitHub Stats" 
-                className="w-full max-w-md"
-              />
-            </div>
-            <div className="glass p-4 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden flex justify-center">
-              <img 
-                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=dracula&hide_border=true&bg_color=00000000&title_color=0ea5e9&text_color=94a3b8`} 
-                alt="Most Used Languages" 
-                className="w-full max-w-md"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-10"
-          >
-            <div className="space-y-6">
-              <h4 className="text-3xl font-bold flex items-center gap-3">
-                <Github size={32} /> @{username}
-              </h4>
-              <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                I am an active contributor to the data science community, sharing my research implementations, ML utility scripts, and full-stack prototypes.
+            <div className="glass p-10 rounded-[3rem] border border-slate-200 dark:border-slate-800">
+              <Github size={64} className="mx-auto mb-8 text-primary-500" />
+              <h4 className="text-3xl font-bold mb-6">@{username}</h4>
+              <p className="text-xl text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
+                Explore my open-source projects, machine learning experiments, and research implementations directly on my GitHub profile.
               </p>
+              
+              <a 
+                href={`https://github.com/${username}`} 
+                target="_blank" 
+                className="btn-primary inline-flex items-center gap-3 px-12 py-5 text-lg"
+              >
+                View Profile on GitHub <ExternalLink size={20} />
+              </a>
             </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                { label: "Pull Shark", icon: <GitPullRequest className="text-purple-500" />, value: "Active" },
-                { label: "Repositories", icon: <GitBranch className="text-green-500" />, value: "20+" },
-                { label: "Total Stars", icon: <Star className="text-yellow-500" />, value: "50+" },
-                { label: "Commits", icon: <Code className="text-blue-500" />, value: "375+" }
-              ].map((item, i) => (
-                <div key={i} className="p-6 glass rounded-[2rem] border border-slate-200 dark:border-slate-800">
-                  <div className="flex items-center gap-3 mb-2">
-                    {item.icon}
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">{item.label}</span>
-                  </div>
-                  <p className="text-2xl font-bold">{item.value}</p>
-                </div>
-              ))}
-            </div>
-
-            <a 
-              href={`https://github.com/${username}`} 
-              target="_blank" 
-              className="btn-primary w-fit px-10 py-5 text-lg"
-            >
-              View GitHub Profile <ExternalLink size={20} />
-            </a>
           </motion.div>
         </div>
       </div>
