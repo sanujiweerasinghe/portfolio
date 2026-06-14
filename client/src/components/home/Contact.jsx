@@ -23,8 +23,8 @@ const Contact = () => {
     setStatus({ type: null, message: '' });
 
     try {
-      // Assuming server runs on port 5000 during development
-      const res = await axios.post('http://localhost:5000/api/contact', formData);
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const res = await axios.post(`${apiUrl}/api/contact`, formData);
       if (res.data.success) {
         setStatus({ type: 'success', message: 'Message sent! I will get back to you soon.' });
         setFormData({ name: '', email: '', subject: '', message: '' });
