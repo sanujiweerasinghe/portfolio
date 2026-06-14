@@ -1,11 +1,22 @@
 # Premium Data Science Portfolio (MERN Stack)
 
+<!-- Primary Tech Stack -->
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+
+<!-- Repository Stats -->
+[![GitHub Stars](https://img.shields.io/github/stars/sanujiweerasinghe/portfolio?style=flat-cache&color=gold)](https://github.com/sanujiweerasinghe/portfolio/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/sanujiweerasinghe/portfolio?style=flat-cache&color=blue)](https://github.com/sanujiweerasinghe/portfolio/network/members)
+[![Repo Size](https://img.shields.io/github/repo-size/sanujiweerasinghe/portfolio?color=blueviolet)](https://github.com/sanujiweerasinghe/portfolio)
+[![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
+<!-- Social Badges -->
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/sanuji-weerasinghe/)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:sanujiweerasinghe@gmail.com)
 
 A professional, responsive, and recruiter-focused portfolio website for Sanuji Weerasinghe, a Data Science undergraduate. Built with the MERN stack and an Apple-inspired minimalist design.
 
