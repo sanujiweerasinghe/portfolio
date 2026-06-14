@@ -30,7 +30,7 @@ const Projects = () => {
       category: "MLOps",
       year: "2025",
       tags: ["XGBoost", "MLflow", "Docker", "GitHub Actions"],
-      image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
       description: "A churn-prediction model productionised with a full MLOps pipeline including experiment tracking and CI/CD monitoring."
     },
     {
