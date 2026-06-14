@@ -38,28 +38,51 @@ const GithubStats = () => {
           </motion.p>
         </div>
 
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="space-y-12"
+            className="space-y-6"
           >
-            <div className="glass p-10 rounded-[3rem] border border-slate-200 dark:border-slate-800">
-              <Github size={64} className="mx-auto mb-8 text-primary-500" />
-              <h4 className="text-3xl font-bold mb-6">@{username}</h4>
-              <p className="text-xl text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
-                Explore my open-source projects, machine learning experiments, and research implementations directly on my GitHub profile.
-              </p>
-              
-              <a 
-                href={`https://github.com/${username}`} 
-                target="_blank" 
-                className="btn-primary inline-flex items-center gap-3 px-12 py-5 text-lg"
-              >
-                View Profile on GitHub <ExternalLink size={20} />
-              </a>
+            <div className="glass p-6 rounded-[3rem] border border-slate-200 dark:border-slate-800 overflow-hidden flex justify-center bg-white/5">
+              <img 
+                src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=transparent&hide_border=true&title_color=0ea5e9&icon_color=0ea5e9&text_color=94a3b8&rank_icon=github`} 
+                alt="GitHub Stats" 
+                className="w-full"
+              />
             </div>
+            <div className="glass p-6 rounded-[3rem] border border-slate-200 dark:border-slate-800 overflow-hidden flex justify-center bg-white/5">
+              <img 
+                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=transparent&hide_border=true&title_color=0ea5e9&text_color=94a3b8`} 
+                alt="Most Used Languages" 
+                className="w-full"
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <h4 className="text-3xl font-bold flex items-center gap-3">
+                <Github size={32} className="text-primary-500" /> @{username}
+              </h4>
+              <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                I am an active contributor to the data science community, sharing research implementations, ML utility scripts, and full-stack prototypes built with <span className="text-primary-500 font-bold">React</span> and <span className="text-primary-500 font-bold">Python</span>.
+              </p>
+            </div>
+            
+            <a 
+              href={`https://github.com/${username}`} 
+              target="_blank" 
+              className="btn-primary w-fit px-10 py-5 text-lg"
+            >
+              View GitHub Profile <ExternalLink size={20} />
+            </a>
           </motion.div>
         </div>
       </div>
