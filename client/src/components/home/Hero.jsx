@@ -19,88 +19,103 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-primary-500/10 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-8 border border-primary-500/20 backdrop-blur-md"
           >
             <Sparkles size={16} className="animate-pulse" />
-            <span>Available for Internships 2026</span>
+            <span>Open to Data Science / Data Engineering internships</span>
           </motion.div>
           
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
-            <span className="text-gradient">Hi, I'm Sanuji Weerasinghe</span>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 leading-tight">
+            Sanuji Weerasinghe
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl leading-relaxed font-medium">
-            A passionate Data Science undergraduate with a strong foundation in machine learning and predictive modeling. Experienced in building end-to-end AI solutions, from <span className="text-slate-900 dark:text-white font-bold">RAG-based chatbots</span> to <span className="text-slate-900 dark:text-white font-bold">biomedical NLP pipelines</span> and computer vision models.
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-200 mb-6">
+            Data Science Undergraduate
+          </h2>
+
+          <p className="text-xl md:text-2xl text-primary-500 font-bold mb-8">
+            Building end-to-end ML systems.
           </p>
           
+          <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-2xl leading-relaxed font-medium">
+            Final-year Data Science undergraduate at the University of Peradeniya with a strong foundation in statistics, machine learning, and data engineering — currently leading a research project on <span className="text-slate-900 dark:text-white font-bold underline decoration-primary-500/30 underline-offset-4">rooftop solar PV forecasting</span>.
+          </p>
+
+          <div className="grid grid-cols-3 gap-8 mb-12">
+            {[
+              { label: "Projects Built", value: "7+" },
+              { label: "Awards Won", value: "2" },
+              { label: "Total Commits", value: "375+" }
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col">
+                <span className="text-3xl font-bold text-primary-500">{stat.value}</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+          
           <div className="flex flex-wrap gap-5 mb-16">
-            <a href="#projects" className="btn-primary group">
+            <a href="#projects" className="btn-primary group px-8">
               View Work 
-              <motion.span 
-                animate={{ x: [0, 5, 0] }} 
-                transition={{ repeat: Infinity, duration: 1.5 }}
-              >
-                <ArrowRight size={20} />
-              </motion.span>
+              <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
             <a 
               href="/Sanuji_Weerasinghe_CV_final1.pdf" 
               download 
-              className="btn-secondary group"
+              className="btn-secondary group px-8"
             >
-              Download CV 
+              Download Resume 
               <Download size={20} className="group-hover:translate-y-1 transition-transform" />
             </a>
           </div>
-          
-          <div className="flex items-center gap-8">
-            <a href="https://github.com/sanujiweerasinghe/" target="_blank" className="p-3 glass rounded-2xl text-slate-400 hover:text-primary-500 hover:scale-110 transition-all">
-              <Github size={24} />
-            </a>
-            <a href="https://linkedin.com/in/sanuji-weerasinghe-b91b9a24b/" target="_blank" className="p-3 glass rounded-2xl text-slate-400 hover:text-primary-500 hover:scale-110 transition-all">
-              <Linkedin size={24} />
-            </a>
-            <div className="h-px w-12 bg-slate-200 dark:bg-slate-800"></div>
-            <span className="text-sm font-bold tracking-widest text-slate-400 uppercase">Connect</span>
+
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 text-slate-400">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              <span className="text-xs font-bold uppercase tracking-widest">Colombo, Sri Lanka</span>
+            </div>
+            <div className="h-4 w-px bg-slate-200 dark:bg-slate-800"></div>
+            <div className="flex items-center gap-4">
+              <a href="https://github.com/sanujiweerasinghe/" target="_blank" className="text-slate-400 hover:text-primary-500 transition-colors">
+                <Github size={20} />
+              </a>
+              <a href="https://linkedin.com/in/sanuji-weerasinghe/" target="_blank" className="text-slate-400 hover:text-primary-500 transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
         </motion.div>
         
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
-          <div className="relative w-full aspect-square max-w-[550px] mx-auto">
+          <div className="relative w-full aspect-square max-w-[500px] mx-auto">
             {/* Ambient Background Glows */}
-            <div className="absolute top-0 right-0 w-72 h-72 bg-primary-500/20 rounded-full blur-[100px] animate-pulse"></div>
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-500/20 rounded-full blur-[100px] animate-pulse delay-1000"></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-primary-500/10 rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-[100px]"></div>
             
             {/* Main Image Container */}
-            <div className="absolute inset-0 rounded-[3rem] overflow-hidden border-8 border-white/50 dark:border-slate-900/50 shadow-2xl z-10 group">
+            <div className="absolute inset-0 rounded-[3.5rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl z-10 group">
               <img 
                 src={profileImg} 
                 alt="Sanuji Weerasinghe" 
-                className="w-full h-full object-cover scale-110 group-hover:scale-100 group-hover:grayscale transition-all duration-1000 ease-in-out"
+                className="w-full h-full object-cover group-hover:grayscale transition-all duration-1000 ease-in-out"
               />
             </div>
-            
-            {/* Decorative Floating Elements */}
-            <motion.div 
-              animate={{ y: [0, -20, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -top-6 -left-6 p-6 glass rounded-[2rem] z-20 shadow-2xl"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center text-green-500">
-                  <Sparkles size={24} />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Status</p>
-                  <p className="text-sm font-bold">Open to Work</p>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </motion.div>
       </div>
+
+      {/* Apple-style Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-b from-primary-500 to-transparent"></div>
+      </motion.div>
     </section>
   );
 };

@@ -1,113 +1,127 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Microscope, FileText, Database, Map, Search, Cpu, Sparkles } from 'lucide-react';
+import { Microscope, Database, Globe, Sun, Zap, Search, ChevronRight, BarChart3, Map } from 'lucide-react';
 
 const Research = () => {
-  const researchWork = [
+  const objectives = [
     {
-      title: "Monsoon-Stratified Rooftop Solar PV Forecasting",
-      status: "Ongoing (2026 – Present)",
-      description: "Developing a satellite-imagery pipeline for solar panel detection and benchmarking models for PV forecasting using NASA POWER data for grid stability.",
-      tags: ["Satellite Imagery", "Time-Series", "PyTorch", "GIS"],
-      highlights: [
-        "Detection of rooftop solar panels using YOLOv8-seg/ResUNet.",
-        "Monsoon-stratified modeling for improved seasonal accuracy.",
-        "Integration of GIS and satellite imagery pipelines."
-      ]
+      title: "Satellite Imagery Pipeline",
+      description: "Built a pipeline across 5 Sri Lankan districts to detect rooftop solar panels, benchmarking YOLOv8-seg and ResUNet segmentation models to estimate district-level rooftop PV potential."
     },
     {
-      title: "PHM Tweet Classification & NLP Benchmarking",
-      status: "Completed (2025)",
-      description: "Investigated and compared deep learning architectures for imbalanced social media text classification within the Public Health Monitoring domain.",
-      tags: ["NLP", "LSTM/Bi-LSTM", "Transformers", "BERT"],
-      highlights: [
-        "Benchmarked tokenizers and embeddings (Word2Vec, FastText).",
-        "Handled severe class imbalance in social media datasets.",
-        "Implemented Bi-LSTM-CRF for entity recognition."
-      ]
+      title: "Forecasting Benchmark",
+      description: "Benchmarked CNN-LSTM against a Transformer for monsoon-stratified day- and week-ahead PV forecasting (5 districts × 4 monsoon regimes), evaluated with MAE, RMSE, R², and skill scores."
+    },
+    {
+      title: "Dataset Engineering",
+      description: "Engineered a leakage-safe, 39-feature time-series dataset spanning 8 years from NASA POWER and public meteorological sources with strict chronological splits."
     }
   ];
 
+  const technologies = ["Python", "PyTorch", "CNN-LSTM & Transformer", "ResUNet / YOLOv8-seg", "Satellite Imagery & GIS", "Time-Series Forecasting"];
+
   return (
-    <section id="research" className="section-padding bg-slate-50/50 dark:bg-slate-900/10">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center text-center mb-20">
+    <section id="research" className="section-padding bg-slate-900 text-white overflow-hidden relative">
+      {/* Background patterns */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/30 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-sm font-bold tracking-[0.2em] text-primary-400 uppercase mb-6 flex items-center gap-3">
+              <Microscope size={18} /> Current Research
+            </h2>
+            <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+              Monsoon-Stratified <br />
+              <span className="text-primary-400 font-serif italic">Solar PV Forecasting</span>
+            </h3>
+            <p className="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
+              A satellite-imagery and time-series research project detecting rooftop solar panels and forecasting district-level PV generation under different monsoon regimes to support grid stability.
+            </p>
+            
+            <div className="flex flex-wrap gap-3 mb-12 text-sm font-bold uppercase tracking-wider">
+               <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                 <Search size={16} className="text-primary-400" />
+                 <span>DSC 4996 Project</span>
+               </div>
+               <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                 <Globe size={16} className="text-blue-400" />
+                 <span>Uni. of Peradeniya</span>
+               </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6">
+              {objectives.map((obj, i) => (
+                <div key={i} className="flex gap-6 group">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-all duration-500">
+                    <ChevronRight size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold mb-1">{obj.title}</h4>
+                    <p className="text-slate-500 group-hover:text-slate-300 transition-colors text-sm leading-relaxed">{obj.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="p-3 bg-primary-500/10 text-primary-500 rounded-2xl mb-6"
+            transition={{ delay: 0.2 }}
+            className="relative"
           >
-            <Microscope size={32} />
-          </motion.div>
-          <h2 className="text-sm font-bold tracking-[0.3em] text-primary-500 uppercase mb-4">Academic Contributions</h2>
-          <h3 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Research & <span className="text-gradient">Innovation</span>.
-          </h3>
-        </div>
-
-        <div className="space-y-16">
-          {researchWork.map((work, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass-card p-8 md:p-16 relative overflow-hidden group"
-            >
-              <div className="absolute top-0 right-0 p-12 text-primary-500/5 opacity-20 transform translate-x-8 -translate-y-8 group-hover:scale-125 transition-transform duration-1000">
-                <Sparkles size={200} />
+            <div className="glass-card bg-white/5 border-white/10 p-10 rounded-[3rem]">
+              <div className="flex items-center gap-4 mb-10">
+                 <div className="p-4 bg-primary-500 rounded-2xl">
+                   <Sun size={32} />
+                 </div>
+                 <div>
+                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Focus Areas</p>
+                   <p className="text-2xl font-bold">Grid Stability & Geospatial AI</p>
+                 </div>
               </div>
 
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <div className="lg:col-span-8">
-                  <div className="flex items-center gap-4 mb-8">
-                    <span className="px-5 py-2 bg-primary-500/10 text-primary-500 text-xs font-black rounded-full uppercase tracking-[0.2em] border border-primary-500/20">
-                      {work.status}
-                    </span>
-                  </div>
-                  <h4 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight text-slate-900 dark:text-slate-100">
-                    {work.title}
-                  </h4>
-                  <p className="text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-4xl font-medium">
-                    {work.description}
-                  </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                    {work.highlights.map((item, i) => (
-                      <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-white/50 dark:bg-slate-800/30 border border-slate-100 dark:border-slate-700/50">
-                        <div className="mt-1.5 p-1 bg-primary-500 text-white rounded-full">
-                          <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                        </div>
-                        <span className="text-slate-600 dark:text-slate-300 font-bold text-sm tracking-tight">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-3">
-                    {work.tags.map((tag, i) => (
-                      <span key={i} className="px-5 py-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2">
-                         {tag}
+              <div className="space-y-6">
+                <div className="p-6 rounded-[2rem] bg-white/5 border border-white/5">
+                  <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Technologies Used</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {technologies.map(tech => (
+                      <span key={tech} className="px-3 py-1.5 rounded-lg bg-primary-500/10 text-primary-400 text-xs font-bold border border-primary-500/20">
+                        {tech}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <div className="lg:col-span-4 flex items-center justify-center">
-                   <div className="w-full aspect-square glass rounded-[3rem] flex flex-col items-center justify-center gap-6 text-slate-300 dark:text-slate-700 border-dashed border-4 border-slate-200 dark:border-slate-800 group-hover:border-primary-500/30 transition-colors duration-500">
-                      <motion.div
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ repeat: Infinity, duration: 3 }}
-                      >
-                        <FileText size={80} className="text-slate-200 dark:text-slate-800" />
-                      </motion.div>
-                      <span className="text-sm font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-600">Publication Pending</span>
-                   </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-6 rounded-[2rem] bg-white/5 border border-white/5 text-center">
+                    <Map size={24} className="mx-auto mb-3 text-blue-400" />
+                    <p className="text-xs font-bold text-slate-500 uppercase">5 Districts</p>
+                    <p className="text-lg font-bold">Mapping</p>
+                  </div>
+                  <div className="p-6 rounded-[2rem] bg-white/5 border border-white/5 text-center">
+                    <BarChart3 size={24} className="mx-auto mb-3 text-green-400" />
+                    <p className="text-xs font-bold text-slate-500 uppercase">8 Years</p>
+                    <p className="text-lg font-bold">Data History</p>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
+
+              <div className="mt-10 p-6 rounded-[2rem] bg-primary-500 text-slate-900 font-bold flex items-center justify-between group cursor-pointer hover:scale-[1.02] transition-transform">
+                <span>View Full Research Proposal</span>
+                <ChevronRight />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

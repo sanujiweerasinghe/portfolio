@@ -50,11 +50,11 @@ const Contact = () => {
               <div className="w-8 h-px bg-primary-500"></div> Get in Touch
             </h2>
             <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-10">
-              Let's discuss your <br />
-              <span className="text-gradient">next big project</span>.
+              Let's <br />
+              <span className="text-gradient">work together</span>.
             </h3>
             <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed font-medium">
-              I'm always open to discussing new projects, research opportunities, or data science internships.
+              Have an internship opportunity, a project idea, or just want to say hi? My inbox is open.
             </p>
 
             <div className="space-y-8">
@@ -63,13 +63,13 @@ const Contact = () => {
                   <Mail size={32} />
                 </div>
                 <div>
-                  <h4 className="font-black text-slate-400 dark:text-slate-500 uppercase text-xs tracking-[0.2em] mb-2">Email Me</h4>
+                  <h4 className="font-black text-slate-400 dark:text-slate-500 uppercase text-xs tracking-[0.2em] mb-2">Email</h4>
                   <p className="text-xl font-bold">sanujiweerasinghe@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex gap-6">
-                <a href="https://linkedin.com/in/sanuji-weerasinghe-b91b9a24b/" target="_blank" className="p-5 glass-card hover:text-primary-500 transition-all hover:scale-110">
+                <a href="https://linkedin.com/in/sanuji-weerasinghe/" target="_blank" className="p-5 glass-card hover:text-primary-500 transition-all hover:scale-110">
                   <Linkedin size={28} />
                 </a>
                 <a href="https://github.com/sanujiweerasinghe/" target="_blank" className="p-5 glass-card hover:text-primary-500 transition-all hover:scale-110">
