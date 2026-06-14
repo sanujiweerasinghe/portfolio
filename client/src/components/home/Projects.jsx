@@ -10,7 +10,7 @@ const Projects = () => {
       title: "Janashakthi Smart Claims",
       subtitle: "AI-Powered Insurance Claim Processing",
       category: "Full Stack",
-      year: "2024",
+      year: "2025",
       tags: ["Django REST", "React", "OpenCV", "Python"],
       image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800",
       description: "A full-stack web application enabling end-to-end insurance claim submission and AI-powered document analysis for Janashakthi Insurance."
@@ -19,7 +19,7 @@ const Projects = () => {
       title: "RAG Smart Document Chatbot",
       subtitle: "Retrieval-Augmented Q&A System",
       category: "AI/ML",
-      year: "2025",
+      year: "2026",
       tags: ["ChromaDB", "Ollama", "Streamlit", "Python"],
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
       description: "An end-to-end RAG application that answers natural-language questions grounded in a custom document corpus with source citations."
@@ -28,7 +28,7 @@ const Projects = () => {
       title: "Customer Churn Prediction",
       subtitle: "Cost-Sensitive Churn Model with MLOps",
       category: "MLOps",
-      year: "2025",
+      year: "2026",
       tags: ["XGBoost", "MLflow", "Docker", "GitHub Actions"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
       description: "A churn-prediction model productionised with a full MLOps pipeline including experiment tracking and CI/CD monitoring."
@@ -37,7 +37,7 @@ const Projects = () => {
       title: "Biomedical NLP NER Pipeline",
       subtitle: "Named Entity Recognition Benchmark",
       category: "AI/ML",
-      year: "2024",
+      year: "2025",
       tags: ["PyTorch", "BiLSTM-CRF", "BERT", "NLP"],
       image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
       description: "A biomedical Named Entity Recognition system benchmarking multiple word embeddings using a BiLSTM-CRF architecture."
@@ -46,7 +46,7 @@ const Projects = () => {
       title: "Tea Leaf Disease Classification",
       subtitle: "Transfer Learning for Agricultural Diagnostics",
       category: "AI/ML",
-      year: "2024",
+      year: "2025",
       tags: ["PyTorch", "VGG16", "ResNet50", "scikit-learn"],
       image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800",
       description: "Applied transfer learning with VGG16 and ResNet50 to classify tea leaf diseases with data augmentation and model comparison."
@@ -55,7 +55,7 @@ const Projects = () => {
       title: "Local RAG Support Bot",
       subtitle: "Enterprise-Grade Local AI Assistant",
       category: "AI/ML",
-      year: "2025",
+      year: "2026",
       tags: ["Llama 3.2", "LangChain", "FastAPI", "ChromaDB", "TTS"],
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
       description: "Fully local RAG customer support chatbot utilizing Llama 3.2, FastAPI (SSE streaming), and Streamlit. Features cited sources, conversation memory, and integrated male/female text-to-speech."
@@ -64,7 +64,7 @@ const Projects = () => {
       title: "Health Mention Classification",
       subtitle: "LSTM vs. Bi-LSTM Benchmark",
       category: "AI/ML",
-      year: "2024",
+      year: "2025",
       tags: ["TensorFlow", "LSTM", "Bi-LSTM", "NLP"],
       image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
       description: "Benchmarking LSTM and Bi-LSTM architectures for detecting personal health mentions in social media text."
