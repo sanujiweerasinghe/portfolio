@@ -8,7 +8,7 @@ const Experience = () => {
       role: "Director of Research & Development",
       company: "Data Science Society",
       location: "University of Peradeniya",
-      period: "2024 — Present",
+      period: "2026 — Present",
       description: "Director of Research & Development at the Data Science Society.",
       tags: ["Leadership"]
     },
