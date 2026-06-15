@@ -117,11 +117,6 @@ const Research = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="mt-10 p-6 rounded-[2rem] bg-primary-500 text-slate-900 font-bold flex items-center justify-between group cursor-pointer hover:scale-[1.02] transition-transform">
-                <span>View Full Research Proposal</span>
-                <ChevronRight />
-              </div>
             </div>
           </motion.div>
         </div>
