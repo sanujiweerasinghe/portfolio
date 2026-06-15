@@ -8,11 +8,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 
-<!-- Repository Stats -->
-[![GitHub Stars](https://img.shields.io/github/stars/sanujiweerasinghe/portfolio?style=flat-cache&color=gold)](https://github.com/sanujiweerasinghe/portfolio/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/sanujiweerasinghe/portfolio?style=flat-cache&color=blue)](https://github.com/sanujiweerasinghe/portfolio/network/members)
-[![Repo Size](https://img.shields.io/github/repo-size/sanujiweerasinghe/portfolio?color=blueviolet)](https://github.com/sanujiweerasinghe/portfolio)
-[![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
 
 <!-- Social Badges -->
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/sanuji-weerasinghe/)
