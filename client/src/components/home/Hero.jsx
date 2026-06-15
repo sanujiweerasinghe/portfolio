@@ -38,11 +38,17 @@ const Hero = () => {
             Final-year Data Science undergraduate at the University of Peradeniya with a strong foundation in statistics, machine learning, and data engineering — currently leading a research project on <span className="text-slate-900 dark:text-white font-bold underline decoration-primary-500/30 underline-offset-4">rooftop solar PV forecasting</span>.
           </p>
 
-          <div className="mb-12">
-            <img 
-              src="https://github-readme-stats-eight-theta.vercel.app/api?username=sanujiweerasinghe&show_icons=true&theme=transparent&hide_border=true&title_color=3b82f6&icon_color=3b82f6&text_color=64748b&rank_icon=github&include_all_commits=true&count_private=true" 
-              alt="GitHub Stats" 
-            />
+          <div className="grid grid-cols-3 gap-8 mb-12">
+            {[
+              { label: "Projects Built", value: "7+" },
+              { label: "Awards Won", value: "2" },
+              { label: "Total Commits", value: "460+" }
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col">
+                <span className="text-3xl font-bold text-primary-500">{stat.value}</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{stat.label}</span>
+              </div>
+            ))}
           </div>
           
           <div className="flex flex-wrap gap-5 mb-16">

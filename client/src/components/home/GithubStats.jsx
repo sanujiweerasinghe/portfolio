@@ -47,14 +47,14 @@ const GithubStats = () => {
           >
             <div className="glass p-6 rounded-[3rem] border border-slate-200 dark:border-slate-800 overflow-hidden flex justify-center bg-white/5">
               <img 
-                src={`https://github-readme-stats-eight-theta.vercel.app/api?username=${username}&show_icons=true&theme=transparent&hide_border=true&title_color=0ea5e9&icon_color=0ea5e9&text_color=94a3b8&rank_icon=github&include_all_commits=true&count_private=true`} 
+                src={`https://github-readme-stats-eight-theta.vercel.app/api?username=${username}&show_icons=true&theme=algolia&include_all_commits=true&count_private=true`} 
                 alt="GitHub Stats" 
                 className="w-full"
               />
             </div>
             <div className="glass p-6 rounded-[3rem] border border-slate-200 dark:border-slate-800 overflow-hidden flex justify-center bg-white/5">
               <img 
-                src={`https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=transparent&hide_border=true&title_color=0ea5e9&text_color=94a3b8`} 
+                src={`https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=algolia`} 
                 alt="Most Used Languages" 
                 className="w-full"
               />
