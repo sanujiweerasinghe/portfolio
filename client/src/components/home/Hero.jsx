@@ -40,7 +40,7 @@ const Hero = () => {
 
           <div className="mb-12">
             <img 
-              src="https://github-readme-stats.vercel.app/api?username=sanujiweerasinghe&show_icons=true&theme=transparent&hide_border=true&title_color=3b82f6&icon_color=3b82f6&text_color=64748b&rank_icon=github&include_all_commits=true&count_private=true" 
+              src="https://github-readme-stats-eight-theta.vercel.app/api?username=sanujiweerasinghe&show_icons=true&theme=transparent&hide_border=true&title_color=3b82f6&icon_color=3b82f6&text_color=64748b&rank_icon=github&include_all_commits=true&count_private=true" 
               alt="GitHub Stats" 
             />
           </div>
