@@ -17,7 +17,7 @@ const Skills = () => {
     {
       title: "Data Engineering & MLOps",
       icon: <Layers size={24} />,
-      skills: ["Apache Airflow", "ETL Pipelines", "Data Warehousing", "Docker", "MLflow", "FastAPI", "GitHub Actions"]
+      skills: ["ETL Pipelines", "Data Warehousing", "Docker", "MLflow", "FastAPI", "GitHub Actions"]
     },
     {
       title: "BI & Visualization",

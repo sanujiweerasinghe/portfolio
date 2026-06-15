@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="text-primary-500">Sanuji</span>
+              <span className="text-blue-500">Sanuji</span>
               <span>Weerasinghe</span>
             </h3>
             <p className="text-slate-600 dark:text-slate-400 max-w-xs">

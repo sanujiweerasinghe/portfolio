@@ -40,7 +40,7 @@ const Navbar = () => {
               <Sparkles size={20} />
             </div>
             <a href="#" className="text-xl font-black tracking-tighter hover:text-primary-500 transition-colors">
-              Sanuji Weerasinghe
+              <span className="text-blue-500">Sanuji</span> Weerasinghe
             </a>
           </motion.div>
 
