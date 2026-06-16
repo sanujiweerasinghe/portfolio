@@ -37,7 +37,7 @@ const Projects = () => {
       title: "Biomedical NLP NER Pipeline",
       subtitle: "Named Entity Recognition Benchmark",
       category: "AI/ML",
-      year: "2025",
+      year: "2026",
       tags: ["PyTorch", "BiLSTM-CRF", "BERT", "NLP"],
       image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
       description: "A biomedical Named Entity Recognition system benchmarking multiple word embeddings using a BiLSTM-CRF architecture."

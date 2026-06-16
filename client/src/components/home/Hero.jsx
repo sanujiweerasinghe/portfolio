@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Download, Github, Linkedin, Sparkles } from 'lucide-react';
 import profileImg from '../../assets/profile.jpg';
 
 const Hero = () => {
+  const [stats, setStats] = useState([
+    { label: "Projects Built", value: "7+" },
+    { label: "Awards Won", value: "2" },
+    { label: "Total Commits", value: "460+" }
+  ]);
+
+  useEffect(() => {
+    const fetchGitHubStats = async () => {
+      try {
+        const repoRes = await fetch('https://api.github.com/users/sanujiweerasinghe');
+        const repoData = await repoRes.json();
+        
+        const commitRes = await fetch('https://api.github.com/search/commits?q=author:sanujiweerasinghe', {
+          headers: { 'Accept': 'application/vnd.github.cloak-preview' }
+        });
+        const commitData = await commitRes.json();
+
+        setStats([
+          { label: "Projects Built", value: repoData.public_repos ? `${Math.max(7, repoData.public_repos)}+` : "7+" },
+          { label: "Awards Won", value: "2" },
+          { label: "Total Commits", value: commitData.total_count ? `${Math.max(460, commitData.total_count)}+` : "460+" }
+        ]);
+      } catch (err) {
+        console.error("Failed to fetch live stats:", err);
+      }
+    };
+
+    fetchGitHubStats();
+  }, []);
+
   return (
     <section id="hero" className="min-h-screen flex items-center section-padding pt-32 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -39,11 +69,7 @@ const Hero = () => {
           </p>
 
           <div className="grid grid-cols-3 gap-8 mb-12">
-            {[
-              { label: "Projects Built", value: "7+" },
-              { label: "Awards Won", value: "2" },
-              { label: "Total Commits", value: "460+" }
-            ].map((stat, i) => (
+            {stats.map((stat, i) => (
               <div key={i} className="flex flex-col">
                 <span className="text-3xl font-bold text-primary-500">{stat.value}</span>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{stat.label}</span>
