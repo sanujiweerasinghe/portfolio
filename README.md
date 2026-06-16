@@ -1,11 +1,18 @@
 # Premium Data Science Portfolio (MERN Stack)
 
+<!-- Primary Tech Stack -->
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+
+
+
+<!-- Social Badges -->
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/sanuji-weerasinghe/)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:sanujiweerasinghe@gmail.com)
 
 A professional, responsive, and recruiter-focused portfolio website for Sanuji Weerasinghe, a Data Science undergraduate. Built with the MERN stack and an Apple-inspired minimalist design.
 
@@ -62,6 +69,3 @@ server/         # Express backend
 1. Connect the `client` directory to Vercel/Netlify.
 2. Ensure the base directory is set to `client`.
 3. Set the build command to `npm run build` and output directory to `dist`.
-
-## 📄 License
-This project is licensed under the ISC License.
