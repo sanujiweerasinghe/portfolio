@@ -157,7 +157,7 @@ export const projects = [
   {
     title: "Biomedical NLP NER Pipeline",
     subtitle: "Named Entity Recognition Benchmark",
-    year: "2025",
+    year: "2026",
     description:
       "A biomedical Named Entity Recognition system benchmarking multiple word embeddings using a BiLSTM-CRF architecture.",
     features: [

@@ -1,22 +1,46 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiDownload, FiArrowRight, FiMail, FiGithub, FiLinkedin, FiChevronDown } from "react-icons/fi";
 import { personal, projects, achievements } from "../../data/profile";
 import { useTypingEffect } from "../../hooks/useTypingEffect";
 
-const stats = [
-  { label: "Projects Built", value: `${projects.length}+` },
-  { label: "Awards Won", value: `${achievements.length}` },
-  { label: "Total Commits", value: "375+" },
-];
-
-const socials = [
-  { label: "GitHub", href: personal.github, icon: FiGithub },
-  { label: "LinkedIn", href: personal.linkedin, icon: FiLinkedin },
-  { label: "Email", href: `mailto:${personal.email}`, icon: FiMail },
-];
-
 export default function Hero() {
   const typed = useTypingEffect(personal.taglines);
+  const [stats, setStats] = useState([
+    { label: "Projects Built", value: `${projects.length}+` },
+    { label: "Awards Won", value: `${achievements.length}` },
+    { label: "Total Commits", value: "460+" },
+  ]);
+
+  useEffect(() => {
+    const fetchGitHubStats = async () => {
+      try {
+        const repoRes = await fetch(`https://api.github.com/users/${personal.githubUsername}`);
+        const repoData = await repoRes.json();
+        
+        const commitRes = await fetch(`https://api.github.com/search/commits?q=author:${personal.githubUsername}`, {
+          headers: { 'Accept': 'application/vnd.github.cloak-preview' }
+        });
+        const commitData = await commitRes.json();
+
+        setStats([
+          { label: "Projects Built", value: repoData.public_repos > projects.length ? `${repoData.public_repos}+` : `${projects.length}+` },
+          { label: "Awards Won", value: `${achievements.length}` },
+          { label: "Total Commits", value: commitData.total_count > 460 ? `${commitData.total_count}+` : "460+" }
+        ]);
+      } catch (err) {
+        console.error("Failed to fetch live stats:", err);
+      }
+    };
+
+    fetchGitHubStats();
+  }, []);
+
+  const socials = [
+    { label: "GitHub", href: personal.github, icon: FiGithub },
+    { label: "LinkedIn", href: personal.linkedin, icon: FiLinkedin },
+    { label: "Email", href: `mailto:${personal.email}`, icon: FiMail },
+  ];
 
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-20">
@@ -77,7 +101,7 @@ export default function Hero() {
                   <a
                     key={label}
                     href={href}
-                    target="_blank"
+                    target={href.startsWith('mailto:') ? undefined : "_blank"}
                     rel="noreferrer"
                     aria-label={label}
                     className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 transition-all hover:-translate-y-0.5 hover:border-accent-500 hover:text-accent-600 dark:hover:text-accent-400"

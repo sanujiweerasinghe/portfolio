@@ -75,7 +75,12 @@ export default function Contact() {
               );
 
               return href ? (
-                <a key={label} href={href} target="_blank" rel="noreferrer">
+                <a 
+                  key={label} 
+                  href={href} 
+                  target={href.startsWith('mailto:') ? undefined : "_blank"}
+                  rel="noreferrer"
+                >
                   {content}
                 </a>
               ) : (
