@@ -60,6 +60,15 @@ export default function Contact() {
         >
           <motion.div variants={fadeUp} className="flex flex-col gap-4 lg:col-span-2">
             {contactInfo.map(({ label, value, href, icon: Icon }) => {
+              const handleContactClick = (e) => {
+                if (label === "Email") {
+                  // Fallback: Copy to clipboard if user is on a device without mail client
+                  navigator.clipboard.writeText(value);
+                  setStatus({ state: "success", message: "Email address copied to clipboard!" });
+                  setTimeout(() => setStatus({ state: "idle", message: "" }), 3000);
+                }
+              };
+
               const content = (
                 <div className="card flex items-center gap-4 p-5">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-600 dark:bg-accent-500/10 dark:text-accent-400">
@@ -80,8 +89,9 @@ export default function Contact() {
                 <a 
                   key={label} 
                   href={href} 
+                  onClick={handleContactClick}
                   target={href.startsWith('mailto:') ? undefined : "_blank"}
-                  rel="noreferrer"
+                  rel={href.startsWith('mailto:') ? undefined : "noreferrer"}
                   className="group block"
                 >
                   {content}
