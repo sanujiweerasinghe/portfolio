@@ -69,7 +69,13 @@ export default function Contact() {
                     <p className="text-xs font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
                       {label}
                     </p>
-                    <p className="text-sm font-medium text-slate-700 dark:text-slate-200">{value}</p>
+                    {label === "Email" ? (
+                      <a href={href} className="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-accent-500 transition-colors">
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="text-sm font-medium text-slate-700 dark:text-slate-200">{value}</p>
+                    )}
                   </div>
                 </div>
               );
