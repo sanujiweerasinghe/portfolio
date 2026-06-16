@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, MessageSquare, Send, CheckCircle, AlertCircle, Linkedin, Github } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Send, CheckCircle, AlertCircle, Linkedin, Github } from 'lucide-react';
 import axios from 'axios';
 
 const Contact = () => {
+  const emailAddress = "sanujiweerasinghe@gmail.com";
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,9 +13,17 @@ const Contact = () => {
   });
   const [status, setStatus] = useState({ type: null, message: '' });
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleEmailClick = (e) => {
+    // Copy to clipboard fallback
+    navigator.clipboard.writeText(emailAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleSubmit = async (e) => {
@@ -58,23 +67,39 @@ const Contact = () => {
             </p>
 
             <div className="space-y-8">
-              <div className="flex items-center gap-6 p-8 glass-card w-fit">
-                <div className="p-4 bg-primary-500/10 text-primary-500 rounded-2xl">
+              <a 
+                href={`mailto:${emailAddress}`}
+                onClick={handleEmailClick}
+                className="flex items-center gap-6 p-8 glass-card w-fit group relative block"
+              >
+                <div className="p-4 bg-primary-500/10 text-primary-500 rounded-2xl group-hover:bg-primary-500 group-hover:text-white transition-all">
                   <Mail size={32} />
                 </div>
                 <div>
                   <h4 className="font-black text-slate-400 dark:text-slate-500 uppercase text-xs tracking-[0.2em] mb-2">Email</h4>
-                  <a href="mailto:sanujiweerasinghe@gmail.com" className="text-xl font-bold hover:text-primary-500 transition-colors">
-                    sanujiweerasinghe@gmail.com
-                  </a>
+                  <p className="text-xl font-bold group-hover:text-primary-500 transition-colors">
+                    {emailAddress}
+                  </p>
                 </div>
-              </div>
+                <AnimatePresence>
+                  {copied && (
+                    <motion.span 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      className="absolute -top-4 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg"
+                    >
+                      Copied!
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </a>
 
               <div className="flex gap-6">
-                <a href="https://linkedin.com/in/sanuji-weerasinghe/" target="_blank" className="p-5 glass-card hover:text-primary-500 transition-all hover:scale-110">
+                <a href="https://linkedin.com/in/sanuji-weerasinghe-b91b9a24b/" target="_blank" rel="noopener noreferrer" className="p-5 glass-card hover:text-primary-500 transition-all hover:scale-110">
                   <Linkedin size={28} />
                 </a>
-                <a href="https://github.com/sanujiweerasinghe/" target="_blank" className="p-5 glass-card hover:text-primary-500 transition-all hover:scale-110">
+                <a href="https://github.com/sanujiweerasinghe/" target="_blank" rel="noopener noreferrer" className="p-5 glass-card hover:text-primary-500 transition-all hover:scale-110">
                   <Github size={28} />
                 </a>
               </div>

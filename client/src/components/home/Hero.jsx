@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Download, Github, Linkedin, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Download, Github, Linkedin, Sparkles, Mail } from 'lucide-react';
 import profileImg from '../../assets/profile.jpg';
 
 const Hero = () => {
@@ -98,12 +98,15 @@ const Hero = () => {
               <span className="text-xs font-bold uppercase tracking-widest">Colombo, Sri Lanka</span>
             </div>
             <div className="h-4 w-px bg-slate-200 dark:bg-slate-800"></div>
-            <div className="flex items-center gap-4">
-              <a href="https://github.com/sanujiweerasinghe/" target="_blank" className="text-slate-400 hover:text-primary-500 transition-colors">
+          <div className="flex items-center gap-4">
+              <a href="https://github.com/sanujiweerasinghe/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary-500 transition-colors">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/sanuji-weerasinghe/" target="_blank" className="text-slate-400 hover:text-primary-500 transition-colors">
+              <a href="https://linkedin.com/in/sanuji-weerasinghe-b91b9a24b/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary-500 transition-colors">
                 <Linkedin size={20} />
+              </a>
+              <a href="mailto:sanujiweerasinghe@gmail.com" className="text-slate-400 hover:text-primary-500 transition-colors">
+                <Mail size={20} />
               </a>
             </div>
           </div>
