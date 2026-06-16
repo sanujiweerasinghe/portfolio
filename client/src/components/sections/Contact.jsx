@@ -20,6 +20,7 @@ const initialForm = { name: "", email: "", message: "" };
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState({ state: "idle", message: "" });
+  const [copied, setCopied] = useState(false);
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -61,16 +62,16 @@ export default function Contact() {
           <motion.div variants={fadeUp} className="flex flex-col gap-4 lg:col-span-2">
             {contactInfo.map(({ label, value, href, icon: Icon }) => {
               const handleContactClick = (e) => {
+                console.log(`Contact clicked: ${label}`);
                 if (label === "Email") {
-                  // Fallback: Copy to clipboard if user is on a device without mail client
                   navigator.clipboard.writeText(value);
-                  setStatus({ state: "success", message: "Email address copied to clipboard!" });
-                  setTimeout(() => setStatus({ state: "idle", message: "" }), 3000);
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 2000);
                 }
               };
 
               const content = (
-                <div className="card flex items-center gap-4 p-5">
+                <div className="card relative flex items-center gap-4 p-5">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-600 dark:bg-accent-500/10 dark:text-accent-400">
                     <Icon className="h-5 w-5" />
                   </span>
@@ -82,6 +83,11 @@ export default function Contact() {
                       {value}
                     </p>
                   </div>
+                  {label === "Email" && copied && (
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-emerald-500 px-2 py-1 text-[10px] font-bold text-white">
+                      Copied!
+                    </span>
+                  )}
                 </div>
               );
 
