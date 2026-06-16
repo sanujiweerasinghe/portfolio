@@ -102,7 +102,7 @@ export default function Hero() {
                     key={label}
                     href={href}
                     target={href.startsWith('mailto:') ? undefined : "_blank"}
-                    rel="noreferrer"
+                    rel={href.startsWith('mailto:') ? undefined : "noreferrer"}
                     aria-label={label}
                     className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 transition-all hover:-translate-y-0.5 hover:border-accent-500 hover:text-accent-600 dark:hover:text-accent-400"
                   >
