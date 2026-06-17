@@ -82,10 +82,10 @@ const Hero = () => {
               View Work 
               <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
-            <a 
-              href="/Sanuji_Weerasinghe_CV_final1.pdf" 
-              download 
-              className="btn-secondary group px-8"
+            <a
+             href="/Sanuji_Weerasinghe_CV.pdf"
+             download
+             className="btn-secondary group px-8"
             >
               Download Resume 
               <Download size={20} className="group-hover:translate-y-1 transition-transform" />
