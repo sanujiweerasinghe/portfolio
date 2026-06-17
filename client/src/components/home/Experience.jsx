@@ -42,19 +42,7 @@ const Experience = () => {
             <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-10 font-medium">
               Professional and training experience to date, combining technical leadership with corporate exposure.
             </p>
-            
-            <div className="p-8 glass rounded-[2rem] border border-slate-200 dark:border-slate-800">
-               <div className="flex items-center gap-4 mb-4">
-                 <div className="w-12 h-12 rounded-xl bg-primary-500/10 text-primary-500 flex items-center justify-center">
-                   <Terminal size={24} />
-                 </div>
-                 <h4 className="font-bold">Total Experience</h4>
-               </div>
-               <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
-                 Over 4 years of academic and professional growth in the field of Data Science and operations.
-               </p>
-            </div>
-          </motion.div>
+            </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
