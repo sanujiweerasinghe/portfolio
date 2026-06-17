@@ -18,7 +18,7 @@ export const personal = {
   github: "https://github.com/sanujiweerasinghe",
   githubUsername: "sanujiweerasinghe",
   linkedin: "https://www.linkedin.com/in/sanuji-weerasinghe-b91b9a24b",
-  resumeUrl: "/Sanuji_Weerasinghe_CV.pdf",
+  resumeUrl: "/Sanuji_Weerasinghe_CV.pdf?v=2",
   photo: "/profile.jpg",
 };
 

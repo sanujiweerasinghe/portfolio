@@ -83,8 +83,8 @@ const Hero = () => {
               <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
             <a
-             href="/Sanuji_Weerasinghe_CV.pdf"
-             download
+              href="/Sanuji_Weerasinghe_CV.pdf?v=2"
+              download
              className="btn-secondary group px-8"
             >
               Download Resume 

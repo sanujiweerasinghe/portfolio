@@ -85,11 +85,11 @@ const Achievements = () => {
                 </div>
               </div>
               {item.image && (
-                <div className="w-full h-64 overflow-hidden border-t border-slate-200 dark:border-slate-800 relative group-hover:h-80 transition-all duration-500 ease-in-out cursor-pointer" onClick={() => window.open(item.image, '_blank')}>
-                  <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
-                  <img src={item.image} alt={`${item.title} Certificate`} className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md">
-                    Click to view
+                <div className="w-full h-64 overflow-hidden border-t border-slate-200 dark:border-slate-800 relative group-hover:h-80 transition-all duration-500 ease-in-out cursor-pointer bg-slate-200/50 dark:bg-slate-900/80 flex items-center justify-center p-6" onClick={() => window.open(item.image, '_blank')}>
+                  <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+                  <img src={item.image} alt={`${item.title} Certificate`} className="w-full h-full object-contain hover:scale-105 transition-transform duration-700 drop-shadow-lg" />
+                  <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white text-xs font-medium px-4 py-2 rounded-full backdrop-blur-md shadow-xl border border-white/10">
+                    Click to view full size
                   </div>
                 </div>
               )}
